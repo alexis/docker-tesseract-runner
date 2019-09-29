@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  runner:
+    image: tesseract-runner:${DOCKER_TAG:-latest}
+    build:
+      context: .
+    tmpfs:
+      - /tmp
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app:cached
+    environment:
+      HISTFILE: /app/.bash_history
+      EDITOR: vi
+    entrypoint: ./tesseract.sh
