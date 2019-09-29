@@ -5,8 +5,6 @@ INPUT_BASENAME=$(basename $INPUTFILE)
 
 OUTPUTPATH="$(pwd -P)"
 
-echo "=== $1 --> ./tesseract-output/ ==="
-
 docker-compose -f "$(dirname $0)/docker-compose.yml"  \
   run --rm \
   -v "$INPUTFILE":/tmp/"$INPUT_BASENAME" \
