@@ -10,8 +10,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - .:/app:cached
+      - .:/project:cached
     environment:
-      HISTFILE: /app/.bash_history
+      HISTFILE: /project/.bash_history
       EDITOR: vi
-    entrypoint: ./tesseract.sh

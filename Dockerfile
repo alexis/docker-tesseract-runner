@@ -21,4 +21,6 @@ RUN set -x \
     && rm  -rf /tesseract \
     && echo "done"
 
-WORKDIR /app
+WORKDIR /runner
+COPY . .
+
