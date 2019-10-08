@@ -5,8 +5,6 @@ services:
     image: tesseract-runner:${DOCKER_TAG:-latest}
     build:
       context: .
-    tmpfs:
-      - /tmp
     stdin_open: true
     tty: true
     volumes:
@@ -14,3 +12,4 @@ services:
     environment:
       HISTFILE: /project/.bash_history
       EDITOR: vi
+      TESLANG: eng
